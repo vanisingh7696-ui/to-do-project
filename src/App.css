@@ -1,0 +1,463 @@
+eset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Full-screen container with gradient background */
+.app-container {
+    position: fixed !important;         /* ensure full screen coverage */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;            /* full viewport width */
+    height: 100vh !important;           /* full viewport height */
+    display: flex !important;
+    justify-content: center !important; /* center horizontally */
+    align-items: center !important;     /* center vertically */
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+    overflow: auto !important;
+}
+
+/* Card in the center */
+.todo-card {
+    width: 100% !important;                        
+    max-width: 48rem !important;                    
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #9333ea 0%, #2563eb 50%, #4338ca 100%) !important;
+  padding: 2rem !important;
+  color: white !important;
+}
+
+.header-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.title {
+  font-size: 1.875rem !important;
+  font-weight: bold !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.subtitle {
+  color: rgba(196, 181, 253, 0.9) !important;
+  margin: 0 !important;
+  font-size: 0.875rem !important;
+}
+
+.header-stats {
+  text-align: right !important;
+}
+
+.stat-number {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.stat-label {
+  font-size: 0.75rem !important;
+  color: rgba(196, 181, 253, 0.9) !important;
+}
+
+/* Add Task Section */
+.add-section {
+  padding: 2rem !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.add-form {
+  display: flex !important;
+  gap: 0.75rem !important;
+}
+
+.add-input {
+  flex: 1 !important;
+  padding: 1rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  color: black;
+}
+
+.add-input::placeholder {
+  color: #202e46 !important;
+}
+
+.add-input:focus {
+  border-color: #a855f7 !important;
+  background: rgb(255, 255, 255) !important;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1) !important;
+
+}
+
+.add-btn {
+  padding: 1rem 2rem !important;
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.4) !important;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px 0 rgba(168, 85, 247, 0.6) !important;
+}
+
+.add-btn-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Controls Section */
+.controls-section {
+  padding: 1.5rem 2rem !important;
+  background: rgba(249, 250, 251, 0.5) !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.filters {
+  display: flex !important;
+  gap: 0.5rem !important;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background: white !important;
+  color: #4b5563 !important;
+  border: 1px solid #e5e7eb !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.filter-btn:hover {
+  background: #f9fafb !important;
+}
+
+.filter-active {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.4) !important;
+}
+
+.filter-badge {
+  margin-left: 0.5rem !important;
+  padding: 0.25rem 0.5rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+}
+
+.clear-btn {
+  padding: 0.5rem 1rem !important;
+  color: #ef4444 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.clear-btn:hover {
+  color: #dc2626 !important;
+  background: #fef2f2 !important;
+}
+
+/* Todo List */
+.todo-list-container {
+  max-height: 24rem !important;
+  overflow-y: auto !important;
+}
+
+.empty-state {
+  padding: 3rem !important;
+  text-align: center !important;
+}
+
+.empty-icon {
+  font-size: 3.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.empty-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #9ca3af !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.empty-text {
+  color: #9ca3af !important;
+  margin: 0 !important;
+}
+
+.todo-list {
+  border-top: 1px solid #f3f4f6 !important;
+}
+
+.todo-item {
+  padding: 1.5rem !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  transition: all 0.2s ease !important;
+  animation: slideIn 0.3s ease forwards !important;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item:hover {
+  background: rgba(249, 250, 251, 0.5) !important;
+}
+
+.todo-item.completed {
+  opacity: 0.6 !important;
+}
+
+.todo-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* Checkbox */
+.checkbox-container {
+  flex-shrink: 0 !important;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+}
+
+.checkbox-input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.checkbox-custom {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  border-radius: 9999px !important;
+  border: 2px solid #d1d5db !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.checkbox-label:hover .checkbox-custom {
+  border-color: #a855f7 !important;
+}
+
+.checkbox-custom.checked {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #059669 !important;
+}
+
+.checkbox-icon {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: white !important;
+}
+
+/* Todo Text */
+.todo-text-container {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.todo-text {
+  font-size: 1.125rem !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.2s ease !important;
+  color: #1f2937 !important;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through !important;
+  color: #9ca3af !important;
+}
+
+.todo-text:hover {
+  color: #7c3aed !important;
+}
+
+.edit-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  font-size: 1.125rem !important;
+  background: white !important;
+  border: 2px solid #a855f7 !important;
+  border-radius: 0.75rem !important;
+  outline: none !important;
+}
+
+.edit-input:focus {
+  border-color: #7c3aed !important;
+}
+
+/* Actions */
+.todo-actions {
+  flex-shrink: 0 !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  opacity: 0;
+  transition: opacity 0.2s ease !important;
+}
+
+.todo-item:hover .todo-actions {
+  opacity: 1 !important;
+}
+
+.action-btn {
+  padding: 0.5rem !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+}
+
+.edit-btn {
+  color: #3b82f6 !important;
+}
+
+.edit-btn:hover {
+  color: #2563eb !important;
+  background: #eff6ff !important;
+}
+
+.delete-btn {
+  color: #ef4444 !important;
+}
+
+.delete-btn:hover {
+  color: #dc2626 !important;
+  background: #fef2f2 !important;
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem 2rem !important;
+  background: rgba(249, 250, 251, 0.5) !important;
+  border-top: 1px solid #f3f4f6 !important;
+}
+
+.footer-stats {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  font-size: 0.875rem !important;
+  color: #6b7280 !important;
+}
+
+.footer-stat {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.stat-dot {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  border-radius: 9999px !important;
+}
+
+.active-dot {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%) !important;
+}
+
+.completed-dot {
+  background: #10b981 !important;
+}
+
+.total-dot {
+  background: #d1d5db !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .app-container {
+    padding: 0.5rem !important;
+  }
+  
+  .header {
+    padding: 1.5rem !important;
+  }
+  
+  .add-section {
+    padding: 1.5rem !important;
+  }
+  
+  .add-form {
+    flex-direction: column !important;
+  }
+  
+  .controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .filters {
+    justify-content: center !important;
+  }
+  
+  .footer-stats {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
