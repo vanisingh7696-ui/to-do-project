@@ -89,7 +89,7 @@ c. Assisted in final deployment of frontend on Vercel/Netlify.
 d. Ensured project presentation materials were ready for submission.
 
 
-🔹 Conclusion
+🔹 Conclusion..
 
 As a team, we successfully built a secure and user-friendly To-Do List application with authentication and CRUD operations.
 Each member contributed effectively in their role, ensuring timely completion of the project.
